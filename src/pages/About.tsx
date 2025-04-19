@@ -1,7 +1,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import About as AboutSection from "@/components/About";
+import AboutSection from "@/components/About";
 
 const About = () => {
   return (

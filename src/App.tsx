@@ -21,14 +21,16 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="relative min-h-screen">
+          <Routes>
+            <Route path="/" element={<div className="animate-fade-in"><Index /></div>} />
+            <Route path="/team" element={<div className="animate-fade-in"><Team /></div>} />
+            <Route path="/about" element={<div className="animate-fade-in"><About /></div>} />
+            <Route path="/products" element={<div className="animate-fade-in"><Products /></div>} />
+            <Route path="/gallery" element={<div className="animate-fade-in"><Gallery /></div>} />
+            <Route path="*" element={<div className="animate-fade-in"><NotFound /></div>} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
