@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -10,13 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 relative">
-                <div className="absolute inset-0 bg-primary rounded-full opacity-70"></div>
-                <div className="absolute inset-1 bg-secondary rounded-full opacity-70"></div>
-                <div className="absolute inset-2 bg-accent rounded-full opacity-70"></div>
-                <div className="absolute inset-3 bg-white rounded-full flex items-center justify-center font-bold text-xs text-gray-900">LP</div>
-              </div>
-              <span className="font-bold text-xl">Lamahi Paint Palace</span>
+              <img 
+                src="/lovable-uploads/8582e922-22d8-4436-a87d-100eaf7dae00.png" 
+                alt="Oman Traders Logo" 
+                className="h-16 w-auto mb-4"
+              />
             </div>
             <p className="text-gray-400 mb-4">
               Authorized dealer of Reliance Paints in Province No.5, Lamahi-Dang, Nepal. Providing quality paints and expert services since 2005.

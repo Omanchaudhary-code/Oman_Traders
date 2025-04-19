@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -24,13 +23,11 @@ const Header = () => {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105">
-          <div className="w-10 h-10 relative">
-            <div className="absolute inset-0 bg-[#FF4B12] rounded-full opacity-70"></div>
-            <div className="absolute inset-1 bg-[#002B5C] rounded-full opacity-70"></div>
-            <div className="absolute inset-2 bg-[#FF4B12] rounded-full opacity-70"></div>
-            <div className="absolute inset-3 bg-white rounded-full flex items-center justify-center font-bold text-xs">OT</div>
-          </div>
-          <span className="font-bold text-xl">Oman Traders</span>
+          <img 
+            src="/lovable-uploads/8582e922-22d8-4436-a87d-100eaf7dae00.png" 
+            alt="Oman Traders Logo" 
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
