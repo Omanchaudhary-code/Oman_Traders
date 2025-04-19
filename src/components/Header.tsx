@@ -8,23 +8,24 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <div className="w-10 h-10 relative">
-            <div className="absolute inset-0 bg-primary rounded-full opacity-70"></div>
-            <div className="absolute inset-1 bg-secondary rounded-full opacity-70"></div>
-            <div className="absolute inset-2 bg-accent rounded-full opacity-70"></div>
-            <div className="absolute inset-3 bg-white rounded-full flex items-center justify-center font-bold text-xs">LP</div>
+            <div className="absolute inset-0 bg-[#FF4B12] rounded-full opacity-70"></div>
+            <div className="absolute inset-1 bg-[#002B5C] rounded-full opacity-70"></div>
+            <div className="absolute inset-2 bg-[#FF4B12] rounded-full opacity-70"></div>
+            <div className="absolute inset-3 bg-white rounded-full flex items-center justify-center font-bold text-xs">OT</div>
           </div>
-          <span className="font-bold text-xl">Lamahi Paint Palace</span>
-        </div>
+          <span className="font-bold text-xl">Oman Traders</span>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <a href="#home" className="font-medium hover:text-primary transition-colors">Home</a>
-          <a href="#about" className="font-medium hover:text-primary transition-colors">About</a>
-          <a href="#products" className="font-medium hover:text-primary transition-colors">Products</a>
-          <a href="#gallery" className="font-medium hover:text-primary transition-colors">Gallery</a>
-          <a href="#contact" className="font-medium hover:text-primary transition-colors">Contact</a>
+          <Link to="/" className="font-medium hover:text-[#FF4B12] transition-colors">Home</Link>
+          <a href="#about" className="font-medium hover:text-[#FF4B12] transition-colors">About</a>
+          <a href="#products" className="font-medium hover:text-[#FF4B12] transition-colors">Products</a>
+          <a href="#gallery" className="font-medium hover:text-[#FF4B12] transition-colors">Gallery</a>
+          <Link to="/team" className="font-medium hover:text-[#FF4B12] transition-colors">Team</Link>
+          <a href="#contact" className="font-medium hover:text-[#FF4B12] transition-colors">Contact</a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -48,11 +49,12 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white px-4 py-2 shadow-md">
           <nav className="flex flex-col space-y-3 py-2">
-            <a href="#home" className="font-medium hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Home</a>
-            <a href="#about" className="font-medium hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>About</a>
-            <a href="#products" className="font-medium hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Products</a>
-            <a href="#gallery" className="font-medium hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Gallery</a>
-            <a href="#contact" className="font-medium hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</a>
+            <Link to="/" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <a href="#about" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>About</a>
+            <a href="#products" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Products</a>
+            <a href="#gallery" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Gallery</a>
+            <Link to="/team" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Team</Link>
+            <a href="#contact" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</a>
           </nav>
         </div>
       )}
