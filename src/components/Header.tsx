@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -21,9 +20,9 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
           <Link to="/" className="font-medium hover:text-[#FF4B12] transition-colors">Home</Link>
-          <a href="#about" className="font-medium hover:text-[#FF4B12] transition-colors">About</a>
-          <a href="#products" className="font-medium hover:text-[#FF4B12] transition-colors">Products</a>
-          <a href="#gallery" className="font-medium hover:text-[#FF4B12] transition-colors">Gallery</a>
+          <Link to="/about" className="font-medium hover:text-[#FF4B12] transition-colors">About</Link>
+          <Link to="/products" className="font-medium hover:text-[#FF4B12] transition-colors">Products</Link>
+          <Link to="/gallery" className="font-medium hover:text-[#FF4B12] transition-colors">Gallery</Link>
           <Link to="/team" className="font-medium hover:text-[#FF4B12] transition-colors">Team</Link>
           <a href="#contact" className="font-medium hover:text-[#FF4B12] transition-colors">Contact</a>
         </nav>
@@ -50,9 +49,9 @@ const Header = () => {
         <div className="md:hidden bg-white px-4 py-2 shadow-md">
           <nav className="flex flex-col space-y-3 py-2">
             <Link to="/" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
-            <a href="#about" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>About</a>
-            <a href="#products" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Products</a>
-            <a href="#gallery" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Gallery</a>
+            <Link to="/about" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link to="/products" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Products</Link>
+            <Link to="/gallery" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
             <Link to="/team" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Team</Link>
             <a href="#contact" className="font-medium hover:text-[#FF4B12] transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</a>
           </nav>
