@@ -7,12 +7,12 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
+          <div className="animate-fade-in">
             <div className="flex items-center space-x-2 mb-4">
               <img 
                 src="/lovable-uploads/8582e922-22d8-4436-a87d-100eaf7dae00.png" 
-                alt="Oman Traders Logo" 
-                className="h-16 w-auto mb-4"
+                alt="Reliance Paints Logo" 
+                className="h-16 w-auto rounded-full transform transition-all duration-300 hover:scale-110"
               />
             </div>
             <p className="text-gray-400 mb-4">
@@ -97,8 +97,8 @@ const Footer = () => {
               © {currentYear} Lamahi Paint Palace. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Terms of Service</a>
             </div>
           </div>
         </div>

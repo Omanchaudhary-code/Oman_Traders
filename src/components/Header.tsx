@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -26,12 +27,12 @@ const Header = () => {
           <img 
             src="/lovable-uploads/8582e922-22d8-4436-a87d-100eaf7dae00.png" 
             alt="Oman Traders Logo" 
-            className="h-12 w-auto"
+            className="h-12 w-auto rounded-full transition-transform duration-300 hover:rotate-6"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 items-center">
           <Link to="/" className={linkClasses("/")}>Home</Link>
           <Link to="/about" className={linkClasses("/about")}>About</Link>
           <Link to="/products" className={linkClasses("/products")}>Products</Link>
@@ -40,36 +41,33 @@ const Header = () => {
           <a href="#contact" className={linkClasses("#contact")}>Contact</a>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button with smooth transition */}
         <button 
-          className="md:hidden text-gray-700 transition-transform duration-200 hover:scale-110"
+          className="md:hidden text-gray-700 transition-transform duration-200 hover:scale-110 focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
-          {isMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
+          <div className="relative w-6 h-6">
+            <span className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out ${isMenuOpen ? 'rotate-45 translate-y-2.5' : 'translate-y-1'}`}></span>
+            <span className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out translate-y-2.5 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`absolute block w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out ${isMenuOpen ? '-rotate-45 translate-y-2.5' : 'translate-y-4'}`}></span>
+          </div>
         </button>
       </div>
 
-      {/* Mobile Menu with Animation */}
+      {/* Mobile Menu with enhanced animation */}
       <div 
         className={`md:hidden bg-white shadow-md transform transition-all duration-300 ease-in-out ${
           isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
       >
-        <nav className="flex flex-col space-y-3 py-2 px-4">
-          <Link to="/" className={linkClasses("/")} onClick={() => setIsMenuOpen(false)}>Home</Link>
-          <Link to="/about" className={linkClasses("/about")} onClick={() => setIsMenuOpen(false)}>About</Link>
-          <Link to="/products" className={linkClasses("/products")} onClick={() => setIsMenuOpen(false)}>Products</Link>
-          <Link to="/gallery" className={linkClasses("/gallery")} onClick={() => setIsMenuOpen(false)}>Gallery</Link>
-          <Link to="/team" className={linkClasses("/team")} onClick={() => setIsMenuOpen(false)}>Team</Link>
-          <a href="#contact" className={linkClasses("#contact")} onClick={() => setIsMenuOpen(false)}>Contact</a>
+        <nav className="flex flex-col space-y-4 py-4 px-4">
+          <Link to="/" className={`${linkClasses("/")} text-lg`} onClick={() => setIsMenuOpen(false)}>Home</Link>
+          <Link to="/about" className={`${linkClasses("/about")} text-lg`} onClick={() => setIsMenuOpen(false)}>About</Link>
+          <Link to="/products" className={`${linkClasses("/products")} text-lg`} onClick={() => setIsMenuOpen(false)}>Products</Link>
+          <Link to="/gallery" className={`${linkClasses("/gallery")} text-lg`} onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+          <Link to="/team" className={`${linkClasses("/team")} text-lg`} onClick={() => setIsMenuOpen(false)}>Team</Link>
+          <a href="#contact" className={`${linkClasses("#contact")} text-lg`} onClick={() => setIsMenuOpen(false)}>Contact</a>
         </nav>
       </div>
     </header>
