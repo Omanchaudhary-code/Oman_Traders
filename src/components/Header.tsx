@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,36 +15,49 @@ const Header = () => {
     return location.pathname.startsWith(path);
   };
 
-  const linkClasses = (path: string) =>
-    `relative font-medium text-gray-700 transition-colors duration-200 ${
-      isActive(path)
-        ? "text-[#FF4B12]"
-        : "hover:text-[#FF4B12]"
-    }`;
+  const navItems = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/products", label: "Products" },
+    { path: "/gallery", label: "Gallery" },
+    { path: "/team", label: "Team" },
+  ];
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/8582e922-22d8-4436-a87d-100eaf7dae00.png" 
-              alt="Oman Traders Logo" 
-              className="h-12 w-12 rounded-full object-cover"
-            />
-            <span className="text-xl font-bold text-gray-800">
-              Oman Traders
-            </span>
+            <div className="flex items-center gap-2">
+              <img 
+                src="/lovable-uploads/e86be155-bb05-4cd5-b61f-00312625c5e2.png"
+                alt="Reliance Paints Logo" 
+                className="h-12 w-auto"
+              />
+              <span className="text-xl font-bold text-[#1B365D]">Oman Traders</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center">
-            <Link to="/" className={linkClasses("/")}>Home</Link>
-            <Link to="/about" className={linkClasses("/about")}>About</Link>
-            <Link to="/products" className={linkClasses("/products")}>Products</Link>
-            <Link to="/gallery" className={linkClasses("/gallery")}>Gallery</Link>
-            <Link to="/team" className={linkClasses("/team")}>Team</Link>
-            <a href="#contact" className={linkClasses("#contact")}>Contact</a>
+          <nav className="hidden md:flex space-x-6 items-center">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={cn(
+                  "text-base font-medium transition-colors hover:text-[#FF4B12]",
+                  isActive(item.path) ? "text-[#FF4B12]" : "text-gray-700"
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Button 
+              asChild
+              className="bg-[#FF4B12] hover:bg-[#FF4B12]/90 text-white"
+            >
+              <Link to="/#contact">Contact Us</Link>
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -62,12 +77,25 @@ const Header = () => {
         {/* Mobile Menu */}
         <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} mt-4`}>
           <nav className="flex flex-col space-y-4 py-4">
-            <Link to="/" className={linkClasses("/") + " block"} onClick={() => setIsMenuOpen(false)}>Home</Link>
-            <Link to="/about" className={linkClasses("/about") + " block"} onClick={() => setIsMenuOpen(false)}>About</Link>
-            <Link to="/products" className={linkClasses("/products") + " block"} onClick={() => setIsMenuOpen(false)}>Products</Link>
-            <Link to="/gallery" className={linkClasses("/gallery") + " block"} onClick={() => setIsMenuOpen(false)}>Gallery</Link>
-            <Link to="/team" className={linkClasses("/team") + " block"} onClick={() => setIsMenuOpen(false)}>Team</Link>
-            <a href="#contact" className={linkClasses("#contact") + " block"} onClick={() => setIsMenuOpen(false)}>Contact</a>
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={cn(
+                  "text-base font-medium transition-colors hover:text-[#FF4B12]",
+                  isActive(item.path) ? "text-[#FF4B12]" : "text-gray-700"
+                )}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Button 
+              asChild
+              className="bg-[#FF4B12] hover:bg-[#FF4B12]/90 text-white w-full"
+            >
+              <Link to="/#contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
+            </Button>
           </nav>
         </div>
       </div>
