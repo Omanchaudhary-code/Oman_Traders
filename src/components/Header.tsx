@@ -23,12 +23,15 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105">
+        <Link to="/" className="flex items-center space-x-3 transition-transform duration-200 hover:scale-105">
           <img 
             src="/lovable-uploads/8582e922-22d8-4436-a87d-100eaf7dae00.png" 
             alt="Oman Traders Logo" 
-            className="h-12 w-auto rounded-full transition-transform duration-300 hover:rotate-6"
+            className="h-12 w-12 rounded-full transition-transform duration-300 hover:rotate-6"
           />
+          <span className="text-xl font-bold text-gray-800 hover:text-[#FF4B12] transition-colors">
+            Oman Traders
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -41,7 +44,7 @@ const Header = () => {
           <a href="#contact" className={linkClasses("#contact")}>Contact</a>
         </nav>
 
-        {/* Mobile Menu Button with smooth transition */}
+        {/* Mobile Menu Button */}
         <button 
           className="md:hidden text-gray-700 transition-transform duration-200 hover:scale-110 focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -55,7 +58,7 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu with enhanced animation */}
+      {/* Mobile Menu */}
       <div 
         className={`md:hidden bg-white shadow-md transform transition-all duration-300 ease-in-out ${
           isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"

@@ -12,11 +12,18 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 text-center lg:text-left animate-fade-in">
-            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-primary relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-primary/20">Transform</span> Your Space With <span className="text-secondary">Premium</span> Colors
-            </h1>
+            <div className="flex items-center justify-center lg:justify-start space-x-4 mb-6">
+              <img
+                src="/lovable-uploads/8582e922-22d8-4436-a87d-100eaf7dae00.png"
+                alt="Oman Traders Logo"
+                className="h-20 w-20 rounded-full object-contain animate-float"
+              />
+              <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold leading-tight">
+                <span className="text-primary">Oman</span> <span className="text-secondary">Traders</span>
+              </h1>
+            </div>
             <p className="text-lg mb-8 text-gray-700 max-w-xl mx-auto lg:mx-0">
-              Welcome to Lamahi Paint Palace - Authorized Dealer of Reliance Paints in Province No.5, Lamahi-Dang, Nepal
+              Your trusted partner for quality products and exceptional service
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 

@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -8,15 +9,18 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="animate-fade-in">
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="flex items-center space-x-3 mb-4">
               <img 
                 src="/lovable-uploads/8582e922-22d8-4436-a87d-100eaf7dae00.png" 
-                alt="Reliance Paints Logo" 
-                className="h-16 w-auto rounded-full transform transition-all duration-300 hover:scale-110"
+                alt="Oman Traders Logo" 
+                className="h-16 w-16 rounded-full transform transition-all duration-300 hover:scale-110"
               />
+              <span className="text-2xl font-bold text-white hover:text-primary transition-colors">
+                Oman Traders
+              </span>
             </div>
             <p className="text-gray-400 mb-4">
-              Authorized dealer of Reliance Paints in Province No.5, Lamahi-Dang, Nepal. Providing quality paints and expert services since 2005.
+              Authorized dealer providing quality products and expert services.
             </p>
             <div className="flex space-x-3">
               <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
@@ -94,7 +98,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Lamahi Paint Palace. All rights reserved.
+              © {currentYear} Oman Traders. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">Privacy Policy</a>
